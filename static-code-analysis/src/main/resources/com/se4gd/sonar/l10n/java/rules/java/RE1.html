@@ -1,0 +1,28 @@
+<p>Do not concatenate string inside loops. If you have to, use StringBuilder instead.</p>
+<h2>Noncompliant Code Example</h2>
+<pre>
+public String concatenateString(String[] sampleStrings){
+    String finalString = "";
+    for(String eachString: sampleStrings){
+        finalString += eachString;
+    }
+    return finalString;
+}
+public String concatenateStringAlt(){
+    String finalString = "";
+    for(int i = 0; i < 50; i++){
+        finalString += "sample string";
+    }
+    return finalString;
+}
+</pre>
+<h2>Compliant Solution</h2>
+<pre>
+public String concatenateString(String[] sampleStrings){
+    StringBuilder finalString = new StringBuilder();  <!--initialization of stringbuilder with an appropriate size will consume less energy -->
+    for(String eachString: sampleStrings){
+        finalString.append(eachString);
+    }
+    return finalString.toString();
+}
+</pre>
