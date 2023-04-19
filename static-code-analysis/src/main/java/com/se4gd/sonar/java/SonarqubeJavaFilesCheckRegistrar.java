@@ -22,7 +22,7 @@ public class SonarqubeJavaFilesCheckRegistrar implements CheckRegistrar {
 	}
 
 	private List<Class<? extends JavaCheck>> checkClasses() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stubb
 		return SonarqubePluginRulesList.getJavaChecks();
 	}
 
