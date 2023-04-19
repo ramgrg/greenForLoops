@@ -16,7 +16,7 @@ public class SonarqubeJavaPluginTest {
 	
 	void testClass() {
 		Plugin.Context context = new Plugin.Context(new MockedSonarqubeRuntime());
-		
+		 
 		new SonarqubeJavaplugin().define(context);
 		
 		assertThat(context.getExtensions()).hasSize(2);

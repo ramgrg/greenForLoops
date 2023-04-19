@@ -23,8 +23,10 @@ public class SonarqubeJavaRulesDefinitionTest {
         assertThat(repository.language()).isEqualTo(SonarqubeJavaRulesDefinition.PLUGIN_LANGUAGE);
         assertThat(repository.rules()).hasSize(SonarqubePluginRulesList.getChecks().size());
         assertThat(repository.rules().stream().filter(Rule::template)).isEmpty();
+        
+        assertAllRuleParametersHaveDescription(repository);
+        assertRuleProperties(repository);
 	}
-	
 	
 	private static void assertRuleProperties(Repository repository) {
         Rule rule = repository.rule("RE1");

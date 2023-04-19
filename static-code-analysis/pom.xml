@@ -5,7 +5,6 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>StaticCodeAnalysis</name>
   <build>
-      <testSourceDirectory>src/test/java</testSourceDirectory>
       <plugins>
           <plugin>
               <artifactId>maven-compiler-plugin</artifactId>
@@ -26,7 +25,7 @@
       <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
-        <version>5.9.2</version>
+        <version>5.7.0</version>
         <scope>test</scope>
      </dependency>
      <dependency>
