@@ -5,16 +5,20 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>StaticCodeAnalysis</name>
   <build>
-      <plugins>
-          <plugin>
-              <artifactId>maven-compiler-plugin</artifactId>
-              <version>3.1</version>
-              <configuration>
-                  <source>1.8</source>
-                  <target>1.8</target>
-              </configuration>
-          </plugin>
-      </plugins>
+      <pluginManagement>
+          <plugins>
+              <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.11.0</version>
+              </plugin>
+              <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-surefire-plugin</artifactId>
+                 <version>3.0.0</version>
+              </plugin>
+          </plugins>
+      </pluginManagement>
   </build>
   <dependencies>
       <dependency>
@@ -22,16 +26,16 @@
            <artifactId>sonar-plugin-api</artifactId>
             <version>9.4.0.54424</version>
       </dependency>
-      <dependency>
+     <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
         <version>5.7.0</version>
         <scope>test</scope>
      </dependency>
      <dependency>
-       <groupId>org.junit.platform</groupId>
-       <artifactId>junit-platform-engine</artifactId>
-       <version>1.9.2</version>
+       <groupId>org.assertj</groupId>
+       <artifactId>assertj-core</artifactId>
+       <version>3.17.2</version>
      </dependency>
      <dependency>
        <groupId>org.sonarsource.analyzer-commons</groupId>
@@ -49,15 +53,10 @@
        <version>7.15.0.30507</version>
      </dependency>
      <dependency>
-       <groupId>org.assertj</groupId>
-       <artifactId>assertj-core</artifactId>
-       <version>3.17.2</version>
-     </dependency>
-     
-     <dependency>
        <groupId>org.sonarsource.java</groupId>
        <artifactId>java-checks-testkit</artifactId>
-       <version>6.14.0.25463</version>
+       <version>7.15.0.30507</version>
+       <scope>test</scope>
      </dependency>
   </dependencies>
   <distributionManagement>

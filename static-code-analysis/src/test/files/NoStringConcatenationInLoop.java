@@ -17,7 +17,7 @@ public class NoStringConcatenationInLoop {
 	public String concatenateStringAlt2(){
 	    String finalString = "";
 	    for(int i = 0; i < 50; i++){
-	        finalString = finalString + "sample string";
+	       finalString = finalString + "sample string";
 	    }
 	    return finalString;
 	}
