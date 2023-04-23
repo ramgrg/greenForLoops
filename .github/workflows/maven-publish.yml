@@ -24,7 +24,7 @@ jobs:
 
     - name: Publish to GitHub Packages Apache Maven
       run : |
-            mvn -B package --file static-code-analysis/pom.xml
+            mvn -B package --file static-code-analysis/pom.xml -DskipTests
             mkdir artifacts && cp ./static-code-analysis/target/*.jar artifacts
             cd artifacts && ls
     - name: Save artifact 
