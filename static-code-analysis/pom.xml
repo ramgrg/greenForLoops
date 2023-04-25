@@ -5,7 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>StaticCodeAnalysis</name>
   <properties>
-    <java.version>20</java.version>
+    <java.version>11</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     
