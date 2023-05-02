@@ -7,6 +7,7 @@
   
   <description>It defines the rules that detect energy smells in different loop types in java</description>
   <url>https://github.com/ramgrg/static-code-analysis</url>
+  <packaging>sonar-plugin</packaging>
   <properties>
     <java.version>11</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -39,6 +40,7 @@
                 <pluginName>${project.name}</pluginName>
                 <pluginClass>com.se4gd.sonar.java.SonarqubeJavaplugin</pluginClass>
                 <sonarLintSupported>true</sonarLintSupported>
+                <skipDependenciesPackaging>true</skipDependenciesPackaging>
                 <sonarQubeMinVersion>${sonarqube.version}</sonarQubeMinVersion>
                 <jreMinVersion>${java.version}</jreMinVersion>    
              </configuration>
@@ -61,6 +63,7 @@
          <groupId>org.sonarsource.sonarqube</groupId>
          <artifactId>sonar-plugin-api</artifactId>
          <version>${sonarqube.version}</version>
+         <scope>provided</scope>
       </dependency>
      <dependency>
        <groupId>org.sonarsource.analyzer-commons</groupId>
@@ -76,6 +79,8 @@
        <groupId>org.sonarsource.java</groupId>
        <artifactId>sonar-java-plugin</artifactId>
        <version>${sonarjava.version}</version>
+       <type>sonar-plugin</type>
+       <scope>provided</scope>
      </dependency>
      <dependency>
        <groupId>org.sonarsource.java</groupId>
