@@ -3,18 +3,25 @@ package com.se4gd.sonar.java;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
+import org.sonar.api.SonarEdition;
+import org.sonar.api.SonarQubeSide;
+import org.sonar.api.SonarRuntime;
+import org.sonar.api.internal.SonarRuntimeImpl;
 import org.sonar.api.rules.RuleType;
 import org.sonar.api.server.rule.RulesDefinition;
 import org.sonar.api.server.rule.RulesDefinition.Param;
 import org.sonar.api.server.rule.RulesDefinition.Repository;
 import org.sonar.api.server.rule.RulesDefinition.Rule;
+import org.sonar.api.utils.Version;
 import org.sonar.api.server.debt.DebtRemediationFunction.Type;
 
 public class SonarqubeJavaRulesDefinitionTest {
 	
+	//private static final SonarRuntime SONAR_RUNTIME = SonarRuntimeImpl.forSonarQube(Version.create(9, 8), SonarQubeSide.SERVER, SonarEdition.COMMUNITY);
+	
 	@Test
 	void testSonarqubeJavaRulesDefinition() {
-		SonarqubeJavaRulesDefinition rulesDefinition = new SonarqubeJavaRulesDefinition(new SonarqubeJavaPluginTest.MockedSonarqubeRuntime());
+		SonarqubeJavaRulesDefinition rulesDefinition = new SonarqubeJavaRulesDefinition();
 		RulesDefinition.Context context = new RulesDefinition.Context();
 		rulesDefinition.define(context);
 		RulesDefinition.Repository repository = context.repository(SonarqubeJavaRulesDefinition.PLUGIN_REPOSITORY_KEY);

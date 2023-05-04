@@ -1,0 +1,32 @@
+<p>If you are iterating as per the number of item in any collection types, calculate the size or length of collection object before hand to avoid calculating the length on every iteration to avoid high energy consumption.</p>
+<h2>Non-compliant Code Examples</h2>
+<pre>
+
+    List&lt;String&gt; listObject = getCollectionData();
+    
+    for(int i = 0; i < listObject.size(); i++){
+        //....
+    }
+    
+    int[] arraySample = getArray(); 
+    for(int i = 0; i < arraySample.length; i++){
+        //....
+    }
+</pre>
+<h2>Compliant Solutions</h2>
+<pre>
+    List&lt;String&gt; listObject = getCollectionData();
+    
+    int listSize = listObject.size();
+    
+    for(int i = 0; i < listSize; i++){
+        //....
+    }
+    
+    int[] arraySample = getArray(); 
+    int arrayLength = arraySample.length;
+    
+    for(int i = 0; i < arrayLength; i++){
+        //....
+    }
+</pre>
