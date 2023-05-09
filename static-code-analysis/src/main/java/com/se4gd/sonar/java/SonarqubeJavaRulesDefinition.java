@@ -42,8 +42,6 @@ public class SonarqubeJavaRulesDefinition implements RulesDefinition{
 		//SonarRuntime runtime = SonarRuntimeImpl.forSonarQube(Version.create(9, 8), SonarQubeSide.SCANNER, SonarEdition.COMMUNITY);
 				
 		RuleMetadataLoader ruleMetadataLoader = new RuleMetadataLoader(RULES_BASE_PATH, runtime);
-		
-		
 		ruleMetadataLoader.addRulesByAnnotatedClass(repository, new ArrayList<>(SonarqubePluginRulesList.getChecks()));
 		
 		setRuleTemplates(repository);
