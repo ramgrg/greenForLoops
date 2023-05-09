@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import org.sonar.plugins.java.api.JavaCheck;
 
+import com.se4gd.sonar.java.checks.DonotFetchCollectionSizeInLoop;
 import com.se4gd.sonar.java.checks.NoStringConcatenationInLoop;
 
 public final class SonarqubePluginRulesList {
@@ -25,7 +26,8 @@ public final class SonarqubePluginRulesList {
 	   * These rules are going to target MAIN code only
 	   */
 	  public static List<Class<? extends JavaCheck>> getJavaChecks() {
-	    return Collections.unmodifiableList(Arrays.asList(NoStringConcatenationInLoop.class));
+	    return Collections.unmodifiableList(Arrays.asList(NoStringConcatenationInLoop.class,
+	    		DonotFetchCollectionSizeInLoop.class));
 	  }
 
 	  /**

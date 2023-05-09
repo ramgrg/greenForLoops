@@ -17,11 +17,11 @@ import org.sonar.api.server.debt.DebtRemediationFunction.Type;
 
 public class SonarqubeJavaRulesDefinitionTest {
 	
-	//private static final SonarRuntime SONAR_RUNTIME = SonarRuntimeImpl.forSonarQube(Version.create(9, 8), SonarQubeSide.SERVER, SonarEdition.COMMUNITY);
+	private static final SonarRuntime SONAR_RUNTIME = SonarRuntimeImpl.forSonarQube(Version.create(9, 8), SonarQubeSide.SERVER, SonarEdition.COMMUNITY);
 	
 	@Test
 	void testSonarqubeJavaRulesDefinition() {
-		SonarqubeJavaRulesDefinition rulesDefinition = new SonarqubeJavaRulesDefinition();
+		SonarqubeJavaRulesDefinition rulesDefinition = new SonarqubeJavaRulesDefinition(SONAR_RUNTIME);
 		RulesDefinition.Context context = new RulesDefinition.Context();
 		rulesDefinition.define(context);
 		RulesDefinition.Repository repository = context.repository(SonarqubeJavaRulesDefinition.PLUGIN_REPOSITORY_KEY);

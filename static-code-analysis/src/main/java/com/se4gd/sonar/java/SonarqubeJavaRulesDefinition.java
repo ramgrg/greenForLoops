@@ -12,6 +12,7 @@ import org.sonar.api.SonarQubeSide;
 import org.sonar.api.SonarRuntime;
 import org.sonar.api.server.*;
 import org.sonar.api.server.rule.RulesDefinition;
+import org.sonar.api.server.rule.RulesDefinitionAnnotationLoader;
 import org.sonar.api.utils.Version;
 import org.sonar.plugins.java.JavaSonarWayProfile;
 import org.sonar.plugins.java.api.JavaCheck;
@@ -28,19 +29,20 @@ public class SonarqubeJavaRulesDefinition implements RulesDefinition{
     
     private static final Set<String> RULE_TEMPLATES_KEY = Collections.emptySet();
     
-  /*  private final SonarRuntime runtime;
+    private final SonarRuntime runtime;
     public SonarqubeJavaRulesDefinition(SonarRuntime runtime) {
     	this.runtime = runtime;
-    } */
+    }
 	
-	
-    public void define(Context context) {
+	@Override
+	public void define(Context context) {
 		// TODO Auto-generated method stub
 		NewRepository repository = context.createRepository(PLUGIN_REPOSITORY_KEY, PLUGIN_LANGUAGE).setName(PLUGIN_NAME);
 		
-		SonarRuntime runtime = SonarRuntimeImpl.forSonarQube(Version.create(9, 2), SonarQubeSide.SCANNER, SonarEdition.COMMUNITY);
+		//SonarRuntime runtime = SonarRuntimeImpl.forSonarQube(Version.create(9, 8), SonarQubeSide.SCANNER, SonarEdition.COMMUNITY);
 				
 		RuleMetadataLoader ruleMetadataLoader = new RuleMetadataLoader(RULES_BASE_PATH, runtime);
+		
 		
 		ruleMetadataLoader.addRulesByAnnotatedClass(repository, new ArrayList<>(SonarqubePluginRulesList.getChecks()));
 		
@@ -50,7 +52,7 @@ public class SonarqubeJavaRulesDefinition implements RulesDefinition{
 	}
 
 
-	private void setRuleTemplates(NewRepository repository) {
+	private static void setRuleTemplates(NewRepository repository) {
 		// TODO Auto-generated method stub
 		RULE_TEMPLATES_KEY.stream()
         .map(repository::rule)

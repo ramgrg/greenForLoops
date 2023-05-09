@@ -16,12 +16,12 @@ public class SonarqubeJavaFilesCheckRegistrar implements CheckRegistrar {
 		registrarContext.registerClassesForRepository(SonarqubeJavaRulesDefinition.PLUGIN_REPOSITORY_KEY, checkClasses(), testCheckClasses());
 	}
 
-	private List<Class<? extends JavaCheck>> testCheckClasses() {
+	public static List<Class<? extends JavaCheck>> testCheckClasses() {
 		// TODO Auto-generated method stub
 		return SonarqubePluginRulesList.getJavaTestChecks();
 	}
 
-	private List<Class<? extends JavaCheck>> checkClasses() {
+	public static List<Class<? extends JavaCheck>> checkClasses() {
 		// TODO Auto-generated method stubb
 		return SonarqubePluginRulesList.getJavaChecks();
 	}

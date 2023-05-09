@@ -1,10 +1,10 @@
 {
-  "title": "Don't fetch the size of any collection in the loop to iterate.",
+  "title": "Don't fetch the size of any collection in the loop to iterate",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
     "func": "Constant\/Issue",
-    "constantCost": "5"
+    "constantCost": "5min"
   },
   "tags": [
     "eco-design",

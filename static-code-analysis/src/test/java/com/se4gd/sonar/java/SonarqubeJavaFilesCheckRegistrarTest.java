@@ -12,7 +12,7 @@ public class SonarqubeJavaFilesCheckRegistrarTest {
 		SonarqubeJavaFilesCheckRegistrar myRegistrar = new SonarqubeJavaFilesCheckRegistrar();
 		myRegistrar.register(context);	
 		
-		assertThat(context.checkClasses()).hasSize(1);
+		assertThat(context.checkClasses()).hasSize(2);
 		assertThat(context.testCheckClasses()).isEmpty();
 	}
 	
