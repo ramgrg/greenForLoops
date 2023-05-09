@@ -16,7 +16,7 @@
     <sonarqube.version>9.4.0.54424</sonarqube.version>
     <sonar.organization>ramgrg</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-    <sonarjava.version>7.15.0.30507</sonarjava.version> 
+    <sonarjava.version>7.18.0.31443</sonarjava.version> 
    </properties>
    <build>
       <plugins>

@@ -45,7 +45,6 @@ public class SonarqubeJavaRulesDefinition implements RulesDefinition{
 		ruleMetadataLoader.addRulesByAnnotatedClass(repository, new ArrayList<>(SonarqubePluginRulesList.getChecks()));
 		
 		setRuleTemplates(repository);
-
         repository.done();
 	}
 
