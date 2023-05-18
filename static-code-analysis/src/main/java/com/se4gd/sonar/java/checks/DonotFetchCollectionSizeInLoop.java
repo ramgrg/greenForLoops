@@ -39,7 +39,7 @@ public class DonotFetchCollectionSizeInLoop extends IssuableSubscriptionVisitor{
 		return Arrays.asList(Kind.FOR_STATEMENT, Kind.WHILE_STATEMENT);
 	}
 	
-	@Override
+	@Override 
 	public void visitNode(Tree tree) {
 		// TODO Auto-generated method stub
 		if (tree.is(Kind.FOR_STATEMENT)) {

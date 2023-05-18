@@ -10,54 +10,23 @@
   <packaging>sonar-plugin</packaging>
   <properties>
     <java.version>11</java.version>
-    <maven.compiler.source>${java.version}</maven.compiler.source>
-    <maven.compiler.target>${java.version}</maven.compiler.target>
-    
     <sonarqube.version>9.4.0.54424</sonarqube.version>
     <sonar.organization>ramgrg</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-    <sonarjava.version>7.18.0.31443</sonarjava.version> 
+    <sonarjava.version>7.15.0.30507</sonarjava.version> 
+    <sonar.skipDependenciesPackaging>true</sonar.skipDependenciesPackaging>
    </properties>
-   <build>
-      <plugins>
-          <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
-          </plugin>
-          <plugin>
-             <groupId>org.apache.maven.plugins</groupId>
-             <artifactId>maven-surefire-plugin</artifactId>
-             <version>3.0.0</version>
-          </plugin>
-          <plugin>
-             <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
-             <artifactId>sonar-packaging-maven-plugin</artifactId>
-             <version>1.21.0.505</version>
-             <extensions>true</extensions>
-             <configuration>
-                <pluginKey>staticcode</pluginKey>
-                <pluginName>${project.name}</pluginName>
-                <pluginClass>com.se4gd.sonar.java.SonarqubeJavaplugin</pluginClass>
-                <sonarLintSupported>true</sonarLintSupported>
-                <skipDependenciesPackaging>true</skipDependenciesPackaging>
-                <sonarQubeMinVersion>${sonarqube.version}</sonarQubeMinVersion>
-                <jreMinVersion>${java.version}</jreMinVersion>    
-             </configuration>
-          </plugin>
-      </plugins>
-  </build>
-  <dependencies>
+   <dependencies>
       <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
-        <version>5.7.0</version>
+        <version>5.9.1</version>
         <scope>test</scope>
      </dependency>
      <dependency>
        <groupId>org.assertj</groupId>
        <artifactId>assertj-core</artifactId>
-       <version>3.17.2</version>
+       <version>3.23.1</version>
      </dependency>
       <dependency>
          <groupId>org.sonarsource.sonarqube</groupId>
@@ -89,11 +58,75 @@
        <scope>test</scope>
      </dependency>
   </dependencies>
-  <distributionManagement>
+   <build>
+      <plugins>
+          <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+          </plugin>
+          <plugin>
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-surefire-plugin</artifactId>
+             <version>3.0.0</version>
+          </plugin>
+          <plugin>
+             <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
+             <artifactId>sonar-packaging-maven-plugin</artifactId>
+             <version>1.21.0.505</version>
+             <extensions>true</extensions>
+             <configuration>
+                <pluginKey>staticcode</pluginKey>
+                <pluginName>${project.name}</pluginName>
+                <pluginClass>com.se4gd.sonar.java.SonarqubeJavaplugin</pluginClass>
+                <sonarLintSupported>true</sonarLintSupported>
+             <!--   <skipDependenciesPackaging>true</skipDependenciesPackaging> -->
+                <sonarQubeMinVersion>${sonarqube.version}</sonarQubeMinVersion>
+                <requirePlugins>java:${sonarjava.version}</requirePlugins>   
+             </configuration>
+          </plugin>
+         <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.4.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <filters>
+                                <filter>
+                                    <artifact>commons-*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/**</exclude>
+                                    </excludes>
+                                </filter>
+                                <filter>
+                                    <artifact>org.*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/**</exclude>
+                                        <exclude>org/sonar/api/batch/sensor/**</exclude>
+                                        <exclude>javax/annotation/**</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+      </plugins>
+  </build>
+ <!-- <distributionManagement>
       <repository>
         <id>github</id>
         <name>GitHub Apache Maven Packages</name>
         <url>https://maven.pkg.github.com/ramgrg/static-code-analysis/</url>
     </repository>
-  </distributionManagement>
+  </distributionManagement> -->
 </project>

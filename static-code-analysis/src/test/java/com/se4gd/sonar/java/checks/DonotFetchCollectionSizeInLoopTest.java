@@ -23,4 +23,19 @@ public class DonotFetchCollectionSizeInLoopTest {
 		.verifyNoIssues();
 	}
 
+	@Test
+	void whileLoopNonCompliantTest() {
+		CheckVerifier.newVerifier()
+			.onFile("src/test/files/DonotFetchCollectionSizeInWhileLoopNonCompliant.java")
+			.withCheck(new DonotFetchCollectionSizeInLoop())
+			.verifyIssues();
+	}
+	
+	@Test
+	void whileLoopCompliantTest() {
+		CheckVerifier.newVerifier()
+		.onFile("src/test/files/DonotFetchCollectionSizeInWhileLoopCompliant.java")
+		.withCheck(new DonotFetchCollectionSizeInLoop())
+		.verifyNoIssues();
+	}
 }
