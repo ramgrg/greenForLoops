@@ -1,0 +1,16 @@
+{
+  "title": "Do not initiate array inside a loop",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "5min"
+  },
+  "tags": [
+    "eco-design",
+    "performance",
+    "bug",
+    "ecocode"
+  ],
+  "defaultSeverity": "Minor"
+}

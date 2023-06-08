@@ -1,0 +1,30 @@
+<p>Do not initiate array inside a loop.</p>
+<h2>Non-compliant Code Examples</h2>
+<pre>
+
+   
+    for(int i = 0; i < 5; i++){
+        int[] a = new int[10]; 
+    }
+    
+    int i = 0;
+    while(i < 5){
+        int[] b = new int[10]; 
+    }
+</pre>
+<h2>Compliant Solutions</h2>
+<pre>
+    
+    
+    int[] a = new int[10]; 
+    
+    for(int i = 0; i < 5; i++){
+        //access the array here...
+    }
+    
+    int i = 0;
+    int[] b = new int[10]; 
+    while(i < 5){
+        //access the array here
+    }
+</pre>

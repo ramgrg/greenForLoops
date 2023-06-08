@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.eclipse.jdt.internal.compiler.ast.ForeachStatement;
 import org.sonar.check.Priority;
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
@@ -11,6 +12,7 @@ import org.sonar.plugins.java.api.semantic.MethodMatchers;
 import org.sonar.plugins.java.api.tree.AnnotationTree;
 import org.sonar.plugins.java.api.tree.BaseTreeVisitor;
 import org.sonar.plugins.java.api.tree.BinaryExpressionTree;
+import org.sonar.plugins.java.api.tree.ForEachStatement;
 import org.sonar.plugins.java.api.tree.ForStatementTree;
 import org.sonar.plugins.java.api.tree.MethodInvocationTree;
 import org.sonar.plugins.java.api.tree.Tree;
@@ -36,7 +38,7 @@ public class DonotFetchCollectionSizeInLoop extends IssuableSubscriptionVisitor{
 	@Override
 	public List<Kind> nodesToVisit() {
 		// TODO Auto-generated method stub
-		return Arrays.asList(Kind.FOR_STATEMENT, Kind.WHILE_STATEMENT);
+		return Arrays.asList(Kind.FOR_STATEMENT, Kind.WHILE_STATEMENT, Kind.FOR_EACH_STATEMENT);
 	}
 	
 	@Override 
