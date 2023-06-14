@@ -1,0 +1,30 @@
+<p>Do not access global variables inside for-loop; instead try to use local variables.</p>
+<h2>Non-compliant Code Examples</h2>
+<pre>
+    public static int a = 6;
+    
+    public void test() {
+        for(int i = 0; i < 5; i++) {
+            System.out.println("The number is " + a);
+        }
+        int i = 0;
+        while(i < 5){
+            System.out.println("The number is " + a);
+        }
+    }
+</pre>
+<h2>Compliant Solutions</h2>
+<pre>
+    public static int a = 6;
+    
+    public void test() {
+        int b = 6;
+        for(int i = 0; i < 5; i++) {
+            System.out.println("The number is " + b);
+        }
+        int i = 0;
+        while(i < 5){
+            System.out.println("The number is " + b);
+        }
+    }
+</pre>
