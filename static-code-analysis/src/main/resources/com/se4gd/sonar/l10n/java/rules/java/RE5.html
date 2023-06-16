@@ -1,0 +1,23 @@
+<p>Avoid using nested loop; instead try to convert nested loop to single loop.</p>
+<h2>Non-compliant Code Examples</h2>
+<pre>
+   
+    public void test() {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                // Do some operations
+            }
+        }
+    }
+</pre>
+<h2>Compliant Solutions</h2>
+<pre>
+    
+    public void test() {
+        for (int k = 0; k < n * m; k++) {
+            int i = k / m;
+            int j = k % m;
+            // Do the nested loops operations
+        }
+    }
+</pre>

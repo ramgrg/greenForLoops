@@ -1,0 +1,16 @@
+{
+  "title": "Avoid using nested loop; instead try to convert nested loop to single loop.",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "10min"
+  },
+  "tags": [
+    "eco-design",
+    "performance",
+    "bug",
+    "ecocode"
+  ],
+  "defaultSeverity": "Minor"
+}
