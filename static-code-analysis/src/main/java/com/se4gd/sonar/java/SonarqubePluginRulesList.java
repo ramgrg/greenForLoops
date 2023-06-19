@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import org.sonar.plugins.java.api.JavaCheck;
 
+import com.se4gd.sonar.java.checks.AvoidBig0TimeComplexity;
 import com.se4gd.sonar.java.checks.DonotAccessGlobalVariableInLoop;
 import com.se4gd.sonar.java.checks.DonotFetchCollectionSizeInLoop;
 import com.se4gd.sonar.java.checks.DonotInitiateArrayInLoop;
@@ -29,7 +30,7 @@ public final class SonarqubePluginRulesList {
 	   */
 	  public static List<Class<? extends JavaCheck>> getJavaChecks() {
 		  return Collections.unmodifiableList(Arrays.asList(NoStringConcatenationInLoop.class,
-		    		DonotFetchCollectionSizeInLoop.class, DonotInitiateArrayInLoop.class, DonotAccessGlobalVariableInLoop.class));
+		    		DonotFetchCollectionSizeInLoop.class, DonotInitiateArrayInLoop.class, DonotAccessGlobalVariableInLoop.class, AvoidBig0TimeComplexity.class));
 	  }
 
 	  /**

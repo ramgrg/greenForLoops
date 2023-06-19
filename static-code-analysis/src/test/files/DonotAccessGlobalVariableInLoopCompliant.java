@@ -3,6 +3,7 @@ public class DonotAccessGlobalVariableInLoopCompliant {
 	
 	public void test() {
 		int b = 5;
+		
 		for(int i = 0; i < 5; i++) {
 			System.out.println("The number is " + b);
 		}
