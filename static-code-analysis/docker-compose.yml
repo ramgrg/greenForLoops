@@ -1,0 +1,8 @@
+version : "1.0"
+services:
+  sonar:
+    build: .
+    image: "green-for-loop:latest"
+    container_name: container-green-for-loop
+    ports: 
+        - "9000:9000"
