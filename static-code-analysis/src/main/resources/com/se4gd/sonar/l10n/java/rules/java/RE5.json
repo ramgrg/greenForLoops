@@ -4,13 +4,12 @@
   "status": "ready",
   "remediation": {
     "func": "Constant\/Issue",
-    "constantCost": "10min"
+    "constantCost": "15min"
   },
   "tags": [
     "eco-design",
     "performance",
-    "bug",
-    "ecocode"
+    "code-smell"
   ],
-  "defaultSeverity": "Minor"
+  "defaultSeverity": "Major"
 }

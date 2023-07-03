@@ -12,8 +12,9 @@ public class DonotInitiateArrayInForLoopNonCompliant {
 			Integer[] intArray = new Integer[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 		}
 		int i = 0;
-		while(i < 0) {
+		while(i < 5) {
 			int[] a = new int[10];
+			i++;
 		}
 	}
 }

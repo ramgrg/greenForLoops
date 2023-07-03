@@ -9,8 +9,9 @@ public class DonotInitiateArrayInForLoopCompliant {
 		}
 		int i = 0;
 		int[] b = new int[10];
-		while(i < 0) {
+		while(i < 5) {
 			//some operations
+			i++;
 		}
 	}
 }

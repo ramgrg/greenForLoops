@@ -23,9 +23,9 @@ public class SonarqubeJavaRulesDefinition implements RulesDefinition{
 	
 	private static final String RULES_BASE_PATH = "com/se4gd/sonar/l10n/java/rules/java";
 	
-	public static final String PLUGIN_NAME = "GreenForLoop";
+	public static final String PLUGIN_NAME = "GreenForLoops";
     public static final String PLUGIN_LANGUAGE = "java";
-    public static final String PLUGIN_REPOSITORY_KEY = "java-greenforloop";
+    public static final String PLUGIN_REPOSITORY_KEY = "java-greenforloops";
     
     private static final Set<String> RULE_TEMPLATES_KEY = Collections.emptySet();
     

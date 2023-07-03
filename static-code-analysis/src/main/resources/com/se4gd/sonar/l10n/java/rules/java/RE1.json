@@ -9,8 +9,7 @@
   "tags": [
     "eco-design",
     "performance",
-    "bug",
-    "ecocode"
+    "code-smell"
   ],
   "defaultSeverity": "Minor"
 }

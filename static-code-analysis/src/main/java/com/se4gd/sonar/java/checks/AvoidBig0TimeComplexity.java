@@ -16,7 +16,7 @@ import org.sonar.plugins.java.api.tree.WhileStatementTree;
 
 @Rule(key = "RE5",
 	description = AvoidBig0TimeComplexity.RULE_MESSAGE,
-	priority = Priority.MINOR
+	priority = Priority.MAJOR
 )
 
 public class AvoidBig0TimeComplexity extends IssuableSubscriptionVisitor{

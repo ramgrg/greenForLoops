@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.se4gd.thesis</groupId>
-  <artifactId>static-code-analysis</artifactId>
+  <artifactId>green-for-loops</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>StaticCodeAnalysis</name>
+  <name>GreenForLoops</name>
   
   <description>It defines the rules that detect energy smells in different loop types in java</description>
   <url>https://github.com/ramgrg/static-code-analysis</url>
@@ -80,7 +80,7 @@
              <version>1.21.0.505</version>
              <extensions>true</extensions>
              <configuration>
-                <pluginKey>staticcode</pluginKey>
+                <pluginKey>greenforloops</pluginKey>
                 <pluginName>${project.name}</pluginName>
                 <pluginClass>com.se4gd.sonar.java.SonarqubeJavaplugin</pluginClass>
                 <sonarLintSupported>true</sonarLintSupported>
