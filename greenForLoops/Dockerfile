@@ -5,4 +5,4 @@ RUN ./maven-build.sh
 
 
 FROM sonarqube:10.1.0-community
-COPY --from=builder /usr/src/green-for-loops/target/green-*.jar /opt/sonarqube/extensions/plugins/
+COPY --from=builder /usr/src/green-for-loops/greenForLoops/target/green-*.jar /opt/sonarqube/extensions/plugins/
