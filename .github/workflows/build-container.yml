@@ -19,7 +19,7 @@ jobs:
 
       - name: Build and push the docker image
         run: |
-          docker build -t ghcr.io/ramgrg/sonar-green-for-loops -f ./greenForLoops/Dockerfile .
+          docker build -t ghcr.io/ramgrg/sonar-green-for-loops -f ./greenForLoops/Dockerfile-workflow .
           docker push ghcr.io/ramgrg/sonar-green-for-loops:latest
 
   
