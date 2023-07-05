@@ -13,7 +13,8 @@ How to install the plugin?
 The plugin can be installed from two ways:
 - You can try by using the following docker command:
   ```sh
-  docker run -p 9000:9000 --name sonar-green-for-loops ghcr.io/ramgrg/sonar-green-for-loops:latest
+  docker run -p 9000:9000 \
+      --name sonar-green-for-loops ghcr.io/ramgrg/sonar-green-for-loops:latest
   ```
 - You can download jar file from the Release section and copy the jar file to `$SONAR_INSTALL_DIR/extensions/plugins` before starting SonarQube.
 
