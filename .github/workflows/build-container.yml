@@ -1,7 +1,7 @@
 name: Docker Image for GHCR
 on:
-  push:
-    branches: [development]
+  release:
+    branches: [master]
 
 jobs:
   build_and_publish:
