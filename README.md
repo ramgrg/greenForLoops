@@ -26,4 +26,7 @@ How SonarQube plugin works?
 To perform static code analysis by SonarQube, a set of rules should be defined. As per those rules, a plugin is developed that will analyses the source code, a very similar way antivirus softwares detect viruses. In addition, if the source code violates these rules, SonarQube labels those codes with issue.
 While analysing the source code, SonarQube parses the source code by building an abstract syntax tree(AST). For more information, please go through this [link](https://docs.sonarqube.org/latest/extension-guide/adding-coding-rules/).
 
-
+Provide feedback after testing the plugin
+--------------------------
+After you finish testing your projects or any open source proojects, please feel free to fill up the feedback form:
+https://forms.gle/rZCgTrvCPAsEtnoU6
