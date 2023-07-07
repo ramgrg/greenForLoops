@@ -14,6 +14,7 @@ import org.sonar.plugins.java.api.tree.BaseTreeVisitor;
 import org.sonar.plugins.java.api.tree.BinaryExpressionTree;
 import org.sonar.plugins.java.api.tree.ForEachStatement;
 import org.sonar.plugins.java.api.tree.ForStatementTree;
+import org.sonar.plugins.java.api.tree.MemberSelectExpressionTree;
 import org.sonar.plugins.java.api.tree.MethodInvocationTree;
 import org.sonar.plugins.java.api.tree.Tree;
 import org.sonar.plugins.java.api.tree.Tree.Kind;
@@ -26,7 +27,7 @@ import org.sonar.plugins.java.api.tree.WhileStatementTree;
 )
 
 public class DonotFetchCollectionSizeInLoop extends IssuableSubscriptionVisitor{
-	public static final String RULE_MESSAGE = "Don't fetch the size of any collection in the loop to iterate";
+	public static final String RULE_MESSAGE = "Don't fetch the size and length of any collections type and array in the loop to iterate";
 	private static final MethodMatchers SIZE_METHOD = MethodMatchers.or(
 			MethodMatchers.create()
 			.ofAnyType()
@@ -74,7 +75,15 @@ public class DonotFetchCollectionSizeInLoop extends IssuableSubscriptionVisitor{
 				super.visitMethodInvocation(tree);
 			}
 		}
-		
+		@Override
+		public void visitMemberSelectExpression(MemberSelectExpressionTree tree) {
+			// TODO Auto-generated method stub
+			if(tree.identifier().name().equals("length")) {
+				reportIssue(tree, RULE_MESSAGE);
+			}else {
+				super.visitMemberSelectExpression(tree);
+			}
+		}
 	}
 
 }

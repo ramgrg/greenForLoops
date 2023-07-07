@@ -13,5 +13,10 @@ public class DonotFetchCollectionSizeInForLoopNonCompliant {
 		for (int i = 0; i < integerList.size(); i++) {
 			//some operations
 		}
+		
+		int[] a = {1,2,3,6};  
+		for (int i = 0; i < a.length; i++) {
+			//some operations
+		}
 	}
 }

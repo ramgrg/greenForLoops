@@ -1,4 +1,4 @@
-<p>If you are iterating as per the number of item in any collection types, calculate the size or length of collection object before hand to avoid calculating the length on every iteration to avoid high energy consumption.</p>
+<p>If you are iterating as per the number of item in any collection types and array, calculate the size or length of collection object before hand to avoid calculating the length on every iteration to avoid high energy consumption.</p>
 <h2>Non-compliant Code Examples</h2>
 <pre>
 
@@ -6,6 +6,10 @@
     
     for(int i = 0; i < listObject.size(); i++){
         //implementation here
+    }
+    int[] a = {1,2,3,6};  
+    for (int i = 0; i < a.length; i++) {
+            //some operations
     }
 </pre>
 <h2>Compliant Solutions</h2>
@@ -16,5 +20,11 @@
     
     for(int i = 0; i < listSize; i++){
         //implementation here
+    }
+    
+    int[] a = {1,2,3,6};  
+    int arrayLength = a.length;
+    for (int i = 0; i < arrayLength; i++) {
+            //some operations
     }
 </pre>

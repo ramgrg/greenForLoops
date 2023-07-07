@@ -12,6 +12,12 @@ public class DonotFetchCollectionSizeInForLoopCompliant {
 		for (int i = 0; i < listSize; i++) {
 			//some operations
 		}
+		
+		int[] a = {1,2,3,6};  
+	    int arrayLength = a.length;
+	    for (int i = 0; i < arrayLength; i++) {
+	            //some operations
+	    }
 	}
 
 }

@@ -12,6 +12,11 @@ public class DonotFetchCollectionSizeInWhileLoopNonCompliant {
 			//some operations
 			i++;
 		}
+		int[] a = {1,2,3,6};  
+		while (i < a.length) {
+			//some operations
+			i++;
+		}
 	}
 
 }
