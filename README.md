@@ -18,7 +18,7 @@ The plugin can be installed from two ways:
   ```
 - You can download jar file from the Release section and copy the jar file to `$SONAR_INSTALL_DIR/extensions/plugins` before starting SonarQube.
 
-After SonarQube started to run in a browser, please create Quality Profile by adding rules with `green-code` tag. All the rules are of type, `Code Smell`.
+After SonarQube started to run in a browser, please create Quality Profile by adding rules, only 5 for now, with `green-code` tag and set that quality profile as default to test. All the rules are of type, `Code Smell`.
 
 
 How SonarQube plugin works?
