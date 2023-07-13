@@ -55,7 +55,7 @@ public class DonotAccessGlobalVariableInLoop extends IssuableSubscriptionVisitor
 		        visitMemberSelectExpression((MemberSelectExpressionTree) tree.expression());
 		      } else if (tree.expression().is(Tree.Kind.IDENTIFIER)) {
 		    	  Symbol symbol = tree.identifier().symbol();
-		    	  if (symbol.isStatic() && symbol.name() != null && !(symbol.owner().type().is("java.lang.System"))){
+		    	  if (symbol.isStatic() && symbol.name() != null && !(symbol.owner().type().is("java.lang.System")) && !symbol.isMethodSymbol()){
 		    		  reportIssue(tree, RULE_MESSAGE);
 		    	  }else {
 		    		  super.visitMemberSelectExpression(tree);
