@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.se4gd.thesis</groupId>
   <artifactId>green-for-loops</artifactId>
-  <version>1.0.3-SNAPSHOT</version>
+  <version>1.0.4-SNAPSHOT</version>
   <name>GreenForLoops</name>
   
   <description>It defines the rules that detect energy smells in different loop types in java</description>

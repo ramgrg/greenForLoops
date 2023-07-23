@@ -1,5 +1,5 @@
 {
-  "title": "Do00 not concatenate string inside loops. If you have to, use StringBuilder instead.",
+  "title": "Do not concatenate string inside loops. If you have to, use StringBuilder instead.",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

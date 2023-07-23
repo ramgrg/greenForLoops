@@ -11,5 +11,6 @@ public class DonotAccessGlobalVariableInLoopNonCompliant {
 			DonotAccessGlobalVariableInLoopNonCompliant.a = 6;
 			int a = Math.random();
 			int b = Math.min(4, 2);
+		}
 	}
 }
