@@ -1,4 +1,4 @@
-<p>Do not access global variables inside for-loop; instead try to use local variables.</p>
+<p>The loops keep on iterating until the escape condition is fulfilled. Inside the loop, if it is accessing some global variables, a problem may arise as global memory will be repeatedly accessed in each iteration</p>
 <h2>Non-compliant Code Examples</h2>
 <pre>
     public static int a = 6;
